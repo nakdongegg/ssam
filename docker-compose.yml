@@ -1,0 +1,44 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins"
+      - JENKINS_ARGS="--prefix=/jenkins"
+    networks:
+      - app-network
+
+  springboot-app:
+    build: ./BACK
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ssam
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=1234
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=ssam
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+  jenkins_home:
+
+networks:
+  app-network:
+    driver: bridge
