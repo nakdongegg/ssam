@@ -14,7 +14,7 @@ services:
       - app-network
 
   springboot-app:
-    build: ./BACK
+    build: ./BACK/Ssam
     ports:
       - "8081:8080"
     depends_on:
