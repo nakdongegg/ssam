@@ -1,3 +1,3 @@
 # ssam
 
-minimum change :)
+minimum change 2 :)
