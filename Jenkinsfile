@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/nakdongegg/ssam.git'
+                git branch: 'main', url: 'https://github.com/nakdongegg/ssam.git', credentialsId: 'docker-hub-credentials'
             }
         }
         stage('Build') {
