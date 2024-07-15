@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir('Back/Ssam') {
+                dir('BACK/Ssam') {
                     sh 'chmod +x gradlew'
                     sh './gradlew build'
                 }
@@ -20,7 +20,7 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
-                    def appImage = docker.build("asz2325/springboot-app:${env.BUILD_NUMBER}", "./Back/Ssam")
+                    def appImage = docker.build("asz2325/springboot-app:${env.BUILD_NUMBER}", "./BACK/Ssam")
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
                         appImage.push()
                         appImage.push('latest')
