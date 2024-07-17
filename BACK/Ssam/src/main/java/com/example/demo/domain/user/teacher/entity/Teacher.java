@@ -1,9 +1,8 @@
-package com.example.demo.domain.user.entity;
+package com.example.demo.domain.user.teacher.entity;
 
 
-import com.example.demo.domain.classroom.entity.School;
+import com.example.demo.domain.classroom.school.entity.School;
 import jakarta.persistence.*;
-import org.hibernate.mapping.Join;
 
 @Entity
 public class Teacher {
@@ -35,7 +34,7 @@ public class Teacher {
     @Column
     private String password;
 
-    @Column
+    @Convert(converter = UserRoleConverter.class)
     private String role;
 
 }

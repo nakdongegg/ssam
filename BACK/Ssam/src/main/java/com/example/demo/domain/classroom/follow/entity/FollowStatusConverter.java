@@ -1,4 +1,4 @@
-package com.example.demo.domain.classroom.entity;
+package com.example.demo.domain.classroom.follow.entity;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
@@ -8,12 +8,14 @@ public class FollowStatusConverter implements AttributeConverter<FollowStatus, S
 
 
     @Override
-    public String convertToDatabaseColumn(FollowStatus followStatus) {
-        return "";
+    public String convertToDatabaseColumn(FollowStatus status) {
+
+        return status.getLegacyCode();
     }
 
     @Override
     public FollowStatus convertToEntityAttribute(String dbData) {
-        return null;
+
+        return FollowStatus.ofLegacyCode(dbData);
     }
 }

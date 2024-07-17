@@ -1,6 +1,6 @@
-package com.example.demo.domain.classroom.entity;
+package com.example.demo.domain.classroom.classroom.entity;
 
-import com.example.demo.domain.user.entity.Teacher;
+import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 
 @Entity

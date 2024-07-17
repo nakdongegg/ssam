@@ -1,7 +1,7 @@
-package com.example.demo.domain.classroom.entity;
+package com.example.demo.domain.classroom.follow.entity;
 
-import com.example.demo.domain.user.entity.Student;
-import com.example.demo.domain.user.entity.Teacher;
+import com.example.demo.domain.user.student.entity.Student;
+import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -26,8 +26,7 @@ public class Follow {
     @Column
     private LocalDateTime follow_date = LocalDateTime.now();
 
-    // private enum status;
+    @Convert(converter = FollowStatusConverter.class)
+    private FollowStatus status;
 
 }
-
-

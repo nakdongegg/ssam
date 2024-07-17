@@ -1,5 +1,7 @@
-package com.example.demo.domain.consult.entity;
+package com.example.demo.domain.consult.consult.entity;
 
+import com.example.demo.domain.consult.appointment.entity.Appointment;
+import com.example.demo.domain.consult.topic.entity.Topic;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;

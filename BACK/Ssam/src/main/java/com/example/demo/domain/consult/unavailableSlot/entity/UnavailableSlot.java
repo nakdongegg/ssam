@@ -1,6 +1,6 @@
-package com.example.demo.domain.consult.entity;
+package com.example.demo.domain.consult.unavailableSlot.entity;
 
-import com.example.demo.domain.user.entity.Teacher;
+import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;

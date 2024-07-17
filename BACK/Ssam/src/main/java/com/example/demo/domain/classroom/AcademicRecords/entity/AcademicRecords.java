@@ -1,7 +1,8 @@
-package com.example.demo.domain.classroom.entity;
+package com.example.demo.domain.classroom.AcademicRecords.entity;
 
-import com.example.demo.domain.user.entity.Student;
-import com.example.demo.domain.user.entity.Teacher;
+import com.example.demo.domain.classroom.school.entity.School;
+import com.example.demo.domain.user.student.entity.Student;
+import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 
 import java.util.Date;

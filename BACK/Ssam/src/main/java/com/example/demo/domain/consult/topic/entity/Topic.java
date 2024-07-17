@@ -1,4 +1,4 @@
-package com.example.demo.domain.consult.entity;
+package com.example.demo.domain.consult.topic.entity;
 
 import jakarta.persistence.*;
 

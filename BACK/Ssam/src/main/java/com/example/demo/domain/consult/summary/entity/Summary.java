@@ -1,5 +1,6 @@
-package com.example.demo.domain.consult.entity;
+package com.example.demo.domain.consult.summary.entity;
 
+import com.example.demo.domain.consult.consult.entity.Consult;
 import jakarta.persistence.*;
 
 import java.util.Date;
