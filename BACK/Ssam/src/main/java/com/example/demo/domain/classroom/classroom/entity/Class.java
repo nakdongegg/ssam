@@ -2,6 +2,7 @@ package com.example.demo.domain.classroom.classroom.entity;
 
 import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Class {
@@ -10,6 +11,7 @@ public class Class {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int class_id;
 
+    @NotNull
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "teacher_id", nullable = false)
     private Teacher teacher;

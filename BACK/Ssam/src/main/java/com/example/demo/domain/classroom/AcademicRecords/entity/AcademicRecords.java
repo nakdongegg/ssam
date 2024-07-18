@@ -15,8 +15,8 @@ public class AcademicRecords {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int record_id;
 
-    @Column
     @Temporal(TemporalType.DATE)
+    @Column
     private Date yymm;
 
 //    @ManyToOne(fetch = FetchType.EAGER)
@@ -31,13 +31,13 @@ public class AcademicRecords {
 //    @JoinColumn(name = "teacher_id", nullable = false)
 //    private Teacher teacher;
 
-    @Column
+    @Column(name = "school_id")
     private int schoolId;
 
-    @Column
+    @Column(name = "student_id")
     private int studentId;
 
-    @Column
+    @Column(name = "teacher_id")
     private int teacherId;
 
     @Column

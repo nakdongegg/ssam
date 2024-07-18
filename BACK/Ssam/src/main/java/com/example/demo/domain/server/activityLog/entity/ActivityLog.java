@@ -7,25 +7,31 @@ import org.springframework.data.annotation.CreatedDate;
 import java.util.Date;
 
 @Entity
+@Table(name = "activity_log")
 public class ActivityLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "activity_log_id")
     private int activityLogId;
 
-    @Column(nullable = false, length = 4)
+    @NotNull
+    @Column(name = "activity_type", nullable = false, length = 4)
     private String activityType;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "user_id", nullable = false)
     private int userId;
 
-    @Convert(converter = UserTypeConverter.class)
     @NotNull
+    @Convert(converter = UserTypeConverter.class)
+    @Column(name = "user_type", nullable = false)
     private UserType userType;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+    @NotNull
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "act_time", nullable = false)
     private Date actTime;
 
     @Column(nullable = false, length = 15)

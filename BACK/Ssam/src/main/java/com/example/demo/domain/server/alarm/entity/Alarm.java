@@ -13,24 +13,30 @@ public class Alarm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "alarm_id")
     private int alarmId;
 
-    @Convert(converter = AlarmTypeConverter.class)
     @NotNull
+    @Convert(converter = AlarmTypeConverter.class)
+    @Column(name = "alarm_type", nullable = false)
     private AlarmType alarmType;
 
-    @Column(nullable = false)
+    @NotNull
+    @Column(name = "user_id", nullable = false)
     private int userId;
 
-    @Convert(converter = UserTypeConverter.class)
     @NotNull
+    @Convert(converter = UserTypeConverter.class)
+    @Column(name = "user_type", nullable = false)
     private UserType userType;
 
+    @NotNull
     @Column(nullable = false, columnDefinition = "TINYINT(1)")
     private int state;
 
-    @Column
+    @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "alarm_time", nullable = false)
     private Date alarmTime;
 }
