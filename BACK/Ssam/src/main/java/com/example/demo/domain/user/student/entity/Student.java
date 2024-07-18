@@ -12,7 +12,7 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int student_id;
 
-    @Column
+    @Column(nullable = false)
     private Date birth;
 
     @Column
@@ -38,6 +38,6 @@ public class Student {
     @Column(nullable = false, unique = true, length = 20)
     private String username;
 
-    @Column
+    @Column(nullable = false)
     private String password;
 }

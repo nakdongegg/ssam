@@ -33,7 +33,7 @@ public class Teacher {
     @Column(nullable = false, unique = true, length = 20)
     private String username;
 
-    @Column
+    @Column(nullable = false)
     private String password;
 
     @Convert(converter = UserRoleConverter.class)
