@@ -16,13 +16,14 @@ public class Summary {
     @JoinColumn(name = "consult_id", nullable = false)
     private Consult consult;
 
-    @Column
+    @Column(nullable = false)
     private String key_points;
 
-    @Column
+    @Column(nullable = false)
     private int profanity_count;
 
-    @Column
+    // 변수 타입 논의 필요
+    @Column(nullable = false, length = 10)
     private int profanity_level;
 
     @Column

@@ -4,6 +4,7 @@ import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "teacher_unavailable_slots")
@@ -18,9 +19,9 @@ public class UnavailableSlot{
     private Teacher teacher;
 
     @Column
-    private Timestamp start_time;
+    private LocalDateTime start_time;
 
     @Column
-    private Timestamp end_time;
+    private LocalDateTime end_time;
 
 }

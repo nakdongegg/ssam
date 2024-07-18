@@ -9,7 +9,7 @@ public class School {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int school_id;
 
-    @Column
+    @Column(nullable = false, length = 21)
     private String name;
 
 }

@@ -10,12 +10,12 @@ public class Class {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int class_id;
 
-    @Column
-    private String pin;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "teacher_id", nullable = false)
     private Teacher teacher;
+
+    @Column(length = 45)
+    private String pin;
 
     @Column
     private String banner;
@@ -26,7 +26,7 @@ public class Class {
     @Column
     private String notice;
 
-    @Column
+    @Column(columnDefinition = "TINYINT CHECK (grade BETWEEN 1 AND 6)")
     private int grade;
 
     @Column
