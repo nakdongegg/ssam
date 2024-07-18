@@ -5,11 +5,11 @@ import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Follow {
-    // 관계 설정 관련 추가해야함
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int follow_id;
@@ -23,8 +23,8 @@ public class Follow {
     private Teacher teacher;
 
     @CreationTimestamp
-    @Column
-    private LocalDateTime follow_date = LocalDateTime.now();
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date followDate;
 
     @Convert(converter = FollowStatusConverter.class)
     private FollowStatus status;

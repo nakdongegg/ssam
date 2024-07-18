@@ -7,11 +7,10 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 public class Teacher {
-    // Teacher Entity(Table)
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int teacher_id;
+    private int teacherId;
 
     @Column(nullable = false, length = 22)
     private String name;
@@ -24,7 +23,7 @@ public class Teacher {
     private String email;
 
     @Column(length = 220)
-    private String teacher_img;
+    private String teacherImg;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "school_id")

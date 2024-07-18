@@ -4,7 +4,7 @@ import com.example.demo.domain.user.student.entity.Student;
 import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Appointment {
@@ -28,10 +28,12 @@ public class Appointment {
     private String access_code;
 
     @Column
-    private LocalDateTime start_time;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date start_time;
 
     @Column
-    private LocalDateTime end_time;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date end_time;
 
     @Convert(converter = AppointmentStatusConverter.class)
     private AppointmentStatus status;

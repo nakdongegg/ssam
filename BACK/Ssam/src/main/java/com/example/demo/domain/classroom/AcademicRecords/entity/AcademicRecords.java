@@ -4,7 +4,6 @@ import com.example.demo.domain.classroom.school.entity.School;
 import com.example.demo.domain.user.student.entity.Student;
 import com.example.demo.domain.user.teacher.entity.Teacher;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 
@@ -17,8 +16,8 @@ public class AcademicRecords {
     private int record_id;
 
     @Column
-    @Size(min = 4, max = 4)
-    private String yymm;
+    @Temporal(TemporalType.DATE)
+    private Date yymm;
 
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JoinColumn(name = "school_id", nullable = false)
@@ -33,13 +32,13 @@ public class AcademicRecords {
 //    private Teacher teacher;
 
     @Column
-    private int school_id;
+    private int schoolId;
 
     @Column
-    private int student_id;
+    private int studentId;
 
     @Column
-    private int teacher_id;
+    private int teacherId;
 
     @Column
     private int grade;
