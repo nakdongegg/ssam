@@ -20,7 +20,7 @@ public class Student {
     private String student_phone;
 
     @Column(length = 22)
-    private String studnet_name;
+    private String student_name;
 
     @Column
     private String student_img;

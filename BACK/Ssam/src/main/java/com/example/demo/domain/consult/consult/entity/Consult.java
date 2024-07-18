@@ -1,7 +1,6 @@
 package com.example.demo.domain.consult.consult.entity;
 
 import com.example.demo.domain.consult.appointment.entity.Appointment;
-import com.example.demo.domain.consult.topic.entity.Topic;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -23,20 +22,26 @@ public class Consult {
     @Column
     private Timestamp actual_date;
 
-    @Column
+    @Column(nullable = false)
     private int running_time;
 
-    @Column
+    @Column(columnDefinition = "MEDIUMTEXT")
     private String content;
 
     @Column
     private String video_url;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "topic_id", nullable = true)
-    private Topic topic;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "topic_id", nullable = true)
+//    private Topic topic;
+
+    @Convert(converter = ConsultTopicConverter.class)
+    private ConsultTopic topic;
+
+    @Column(length = 100)
+    private String webrtc_session_id;
 
     @Column
-    private String webrtc_session_id;
+    private String access_code;
 
 }
