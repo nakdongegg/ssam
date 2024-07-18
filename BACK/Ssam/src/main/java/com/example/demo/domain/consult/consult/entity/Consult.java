@@ -2,34 +2,37 @@ package com.example.demo.domain.consult.consult.entity;
 
 import com.example.demo.domain.consult.appointment.entity.Appointment;
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 public class Consult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int consult_id;
+    private int consultId;
 
     @Column
-    private String consult_url;
+    private String consultUrl;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "appointment_id", nullable = false)
     private Appointment appointment;
 
     @Column
-    private Timestamp actual_date;
+    @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date actualDate;
 
     @Column(nullable = false)
-    private int running_time;
+    private int runningTime;
 
     @Column(columnDefinition = "MEDIUMTEXT")
     private String content;
 
     @Column
-    private String video_url;
+    private String videoUrl;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "topic_id", nullable = true)
@@ -39,9 +42,9 @@ public class Consult {
     private ConsultTopic topic;
 
     @Column(length = 100)
-    private String webrtc_session_id;
+    private String webrtcSessionId;
 
     @Column
-    private String access_code;
+    private String accessCode;
 
 }

@@ -7,7 +7,7 @@ public class School {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int school_id;
+    private int schoolId;
 
     @Column(nullable = false, length = 21)
     private String name;

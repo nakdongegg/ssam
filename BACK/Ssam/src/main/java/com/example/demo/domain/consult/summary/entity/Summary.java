@@ -10,28 +10,28 @@ public class Summary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int summary_id;
+    private int summaryId;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "consult_id", nullable = false)
     private Consult consult;
 
     @Column(nullable = false)
-    private String key_points;
+    private String keyPoints;
 
     @Column(nullable = false)
-    private int profanity_count;
+    private int profanityCount;
 
     // 변수 타입 논의 필요
     @Column(nullable = false, length = 10)
-    private int profanity_level;
+    private int profanityLevel;
 
     @Column
-    private String parent_concerns;
+    private String parentConcerns;
 
     @Column
-    private String teacher_recommendations;
+    private String teacherRecommendations;
 
     @Column
-    private Date follow_up_date;
+    private Date followUpDate;
 }

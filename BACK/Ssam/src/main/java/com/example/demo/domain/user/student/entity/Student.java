@@ -10,30 +10,31 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int student_id;
+    private int studentId;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date birth;
 
     @Column
     @Size(min = 11, max = 11)
-    private String student_phone;
+    private String studentPhone;
 
     @Column(length = 22)
-    private String student_name;
+    private String studentName;
 
     @Column
-    private String student_img;
+    private String studentImg;
 
     @Column
     @Size(min = 11, max = 11)
-    private String parent_phone;
+    private String parentPhone;
 
     @Column(length = 22)
-    private String parent_name;
+    private String parentName;
 
     @Column(length = 1)
-    private String parent_relation;
+    private String parentRelation;
 
     @Column(nullable = false, unique = true, length = 20)
     private String username;
