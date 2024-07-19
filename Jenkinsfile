@@ -6,7 +6,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/nakdongegg/ssam.git', credentialsId: 'docker-hub-credentials'
+                cleanWs()
+                checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[url: 'https://github.com/nakdongegg/ssam.git', credentialsId: 'docker-hub-credentials']]
+                ])
             }
         }
         stage('Build') {
