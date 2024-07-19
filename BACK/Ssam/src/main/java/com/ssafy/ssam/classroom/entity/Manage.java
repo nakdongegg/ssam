@@ -33,6 +33,7 @@ public class Manage {
     private Date followDate;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Convert(converter = ManageStatusConverter.class)
     @Column(nullable = false)
     private ManageStatus status;

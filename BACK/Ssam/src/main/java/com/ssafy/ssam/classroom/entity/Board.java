@@ -1,6 +1,5 @@
 package com.ssafy.ssam.classroom.entity;
 
-import com.example.demo.domain.user.teacher.entity.Teacher;
 import com.ssafy.ssam.notification.entity.Question;
 import com.ssafy.ssam.user.entity.User;
 import jakarta.persistence.*;

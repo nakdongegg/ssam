@@ -39,6 +39,7 @@ public class Appointment {
     private Date endTime;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Convert(converter = AppointmentStatusConverter.class)
     @Column(nullable = false)
     private AppointmentStatus status;

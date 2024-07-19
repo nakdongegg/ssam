@@ -35,6 +35,7 @@ public class Consult {
     @Column(name = "video_url")
     private String videoUrl;
 
+    @Enumerated(EnumType.STRING)
     @Convert(converter = ConsultTopicConverter.class)
     private ConsultTopic topic;
 

@@ -1,14 +1,13 @@
 package com.ssafy.ssam.user.entity;
 
-import com.example.demo.domain.user.teacher.entity.UserRoleConverter;
 import com.ssafy.ssam.classroom.entity.Board;
 import com.ssafy.ssam.classroom.entity.Manage;
 import com.ssafy.ssam.classroom.entity.School;
-import com.ssafy.ssam.classroom.entity.UserBoardRelation;
 import com.ssafy.ssam.consult.entity.Appointment;
 import com.ssafy.ssam.consult.entity.UnavailableSlot;
 import com.ssafy.ssam.notification.entity.Alarm;
 import com.ssafy.ssam.notification.entity.Question;
+import com.ssafy.ssam.user.converter.UserRoleConverter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
@@ -45,9 +44,10 @@ public class User {
     private String userImg;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Convert(converter = UserRoleConverter.class)
     @Column(nullable = false)
-    private String role;
+    private UserRole role;
 
     @NotNull
     @Temporal(TemporalType.DATE)
@@ -94,7 +94,7 @@ public class User {
     @OneToMany(mappedBy = "teacher")
     private List<Appointment> teacherAppointments;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "teacher")
     private List<UnavailableSlot> unavailableSlots;
 
     @OneToMany(mappedBy = "user")
