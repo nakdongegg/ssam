@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SsamApplication {
 
 	public static void main(String[] args) {
+		System.out.println("hello");
 		SpringApplication.run(SsamApplication.class, args);
 	}
 
