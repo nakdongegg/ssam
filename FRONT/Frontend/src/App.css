@@ -1,0 +1,23 @@
+.navbar-array {
+  height: 10vh;
+  background-color: white;
+}
+
+.logo {
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 10%;
+}
+
+.menu-array {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.menu-array h2 {
+  margin: 0% 3%;
+  font-size: 180%;
+}
