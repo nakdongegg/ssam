@@ -5,6 +5,8 @@ import MainPage from "./mainPage/MainPage";
 import TeacherJoin from "./teacher/join/TeacherJoin";
 import TeacherLogin from "./teacher/login/TeacherLogin";
 import TeacherSubpage from "./teacher/subPage/TeacherSubpage";
+import PasswordChange from './teacher/myPage/PasswordChange';
+import TeacherUpdate from './teacher/myPage/TeacherUpdate';
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/teacherlogin" element={<TeacherLogin />} />
           <Route path="/teacherjoin" element={<TeacherJoin />} />
           <Route path="/teachersubpage" element={<TeacherSubpage />} />
+          <Route path="/teacherupdate" element={<TeacherUpdate />} />
+          <Route path="/passwordchange" element={<PasswordChange />} />
         </Routes>
       </div>
     </div>
