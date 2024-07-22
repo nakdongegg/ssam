@@ -1,7 +1,5 @@
 package com.ssafy.ssam.notification.entity;
 
-import com.example.demo.domain.server.activityLog.entity.UserType;
-import com.example.demo.domain.server.activityLog.entity.UserTypeConverter;
 import com.ssafy.ssam.notification.converter.AlarmTypeConverter;
 import com.ssafy.ssam.user.entity.User;
 import jakarta.persistence.*;
@@ -19,13 +17,13 @@ public class Alarm {
     private int alarmId;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Convert(converter = AlarmTypeConverter.class)
     @Column(name = "alarm_type", nullable = false)
     private AlarmType alarmType;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    @Column
     private User user;
 
     @NotNull
@@ -35,6 +33,6 @@ public class Alarm {
     @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "alarm_time", nullable = false)
+    @Column(name = "alarm_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Date alarmTime;
 }

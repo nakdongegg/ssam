@@ -1,7 +1,5 @@
 package com.ssafy.ssam.analytics.entity;
 
-import com.example.demo.domain.server.activityLog.entity.UserType;
-import com.example.demo.domain.server.activityLog.entity.UserTypeConverter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.CreatedDate;
@@ -28,7 +26,7 @@ public class ActivityLog {
     @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "act_time", nullable = false)
+    @Column(name = "act_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Date actTime;
 
     @Column(nullable = false, length = 15)

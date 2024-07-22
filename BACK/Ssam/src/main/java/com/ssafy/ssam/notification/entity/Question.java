@@ -34,11 +34,11 @@ public class Question {
     @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "content_date", nullable = false)
+    @Column(name = "content_date", columnDefinition = "TIMESTAMP", nullable = false)
     private Date contentDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "answer_date")
+    @Column(name = "answer_date", columnDefinition = "TIMESTAMP")
     private Date answerDate;
 
 }

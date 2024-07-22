@@ -22,7 +22,7 @@ public class Consult {
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "actual_date")
+    @Column(name = "actual_date", columnDefinition = "TIMESTAMP")
     private Date actualDate;
 
     @NotNull
@@ -35,6 +35,7 @@ public class Consult {
     @Column(name = "video_url")
     private String videoUrl;
 
+    @Enumerated(EnumType.STRING)
     @Convert(converter = ConsultTopicConverter.class)
     private ConsultTopic topic;
 

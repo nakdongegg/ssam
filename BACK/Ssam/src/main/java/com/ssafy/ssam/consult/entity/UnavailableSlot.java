@@ -1,9 +1,10 @@
 package com.ssafy.ssam.consult.entity;
 
-import com.example.demo.domain.user.teacher.entity.Teacher;
+import com.ssafy.ssam.user.entity.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -18,16 +19,16 @@ public class UnavailableSlot{
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "teacher_id", nullable = false)
-    private Teacher teacher;
+    private User teacher;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "start_time", nullable = false)
-    private Date startTime;
+    @Column(name = "start_time", columnDefinition = "TIMESTAMP",nullable = false)
+    private Timestamp startTime;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "end_time", nullable = false)
-    private Date endTime;
+    @Column(name = "end_time", columnDefinition = "TIMESTAMP", nullable = false)
+    private Timestamp endTime;
 
 }

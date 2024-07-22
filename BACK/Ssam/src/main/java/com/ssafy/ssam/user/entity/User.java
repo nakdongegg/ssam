@@ -1,14 +1,13 @@
 package com.ssafy.ssam.user.entity;
 
-import com.example.demo.domain.user.teacher.entity.UserRoleConverter;
 import com.ssafy.ssam.classroom.entity.Board;
 import com.ssafy.ssam.classroom.entity.Manage;
 import com.ssafy.ssam.classroom.entity.School;
-import com.ssafy.ssam.classroom.entity.UserBoardRelation;
 import com.ssafy.ssam.consult.entity.Appointment;
 import com.ssafy.ssam.consult.entity.UnavailableSlot;
 import com.ssafy.ssam.notification.entity.Alarm;
 import com.ssafy.ssam.notification.entity.Question;
+import com.ssafy.ssam.user.converter.UserRoleConverter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
@@ -25,29 +24,30 @@ public class User {
     private int userId;
 
     @NotNull
-    @Column(name = "user_name", length = 22, nullable = false)
-    private String userName;
+    @Column(name = "name", length = 22, nullable = false)
+    private String name;
 
     @NotNull
     @Email
-    @Column(name = "user_email", length = 45, nullable = false)
-    private String userEmail;
+    @Column(name = "email", length = 45, nullable = false)
+    private String email;
 
     @NotNull
-    @Column(name = "userPhone", length = 11, nullable = false)
-    private String userPhone;
+    @Column(name = "phone", length = 11, nullable = false)
+    private String phone;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "school_id")
     private School school;
 
-    @Column(name = "use_img")
-    private String userImg;
+    @Column(name = "img_url")
+    private String imgUrl;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Convert(converter = UserRoleConverter.class)
     @Column(nullable = false)
-    private String role;
+    private UserRole role;
 
     @NotNull
     @Temporal(TemporalType.DATE)
@@ -94,7 +94,7 @@ public class User {
     @OneToMany(mappedBy = "teacher")
     private List<Appointment> teacherAppointments;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "teacher")
     private List<UnavailableSlot> unavailableSlots;
 
     @OneToMany(mappedBy = "user")
