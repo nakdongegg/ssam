@@ -22,7 +22,7 @@ public class LoginLog {
     @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "login_time", nullable = false)
+    @Column(name = "login_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Date loginTime;
 
     @NotNull

@@ -26,7 +26,7 @@ public class ActivityLog {
     @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "act_time", nullable = false)
+    @Column(name = "act_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Date actTime;
 
     @Column(nullable = false, length = 15)

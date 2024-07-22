@@ -29,7 +29,7 @@ public class Manage {
     @NotNull
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "follow_date", nullable = false)
+    @Column(name = "follow_date", columnDefinition = "TIMESTAMP", nullable = false)
     private Date followDate;
 
     @NotNull

@@ -33,6 +33,6 @@ public class Alarm {
     @NotNull
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "alarm_time", nullable = false)
+    @Column(name = "alarm_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Date alarmTime;
 }

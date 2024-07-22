@@ -26,7 +26,6 @@ public class Summary {
     @Column(name = "profanity_count", nullable = false)
     private int profanityCount;
 
-    // 변수 타입 논의 필요
     @NotNull
     @Column(name = "profanity_level", nullable = false, length = 10)
     private String profanityLevel;
@@ -38,6 +37,6 @@ public class Summary {
     private String teacherRecommendation;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "follow_up_date")
+    @Column(name = "follow_up_date", columnDefinition = "TIMESTAMP")
     private Date followUpDate;
 }

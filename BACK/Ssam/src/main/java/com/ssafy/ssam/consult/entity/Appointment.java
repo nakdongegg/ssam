@@ -30,12 +30,12 @@ public class Appointment {
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "start_time", nullable = false)
+    @Column(name = "start_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Date startTime;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "end_time", nullable = false)
+    @Column(name = "end_time", columnDefinition = "TIMESTAMP",nullable = false)
     private Date endTime;
 
     @NotNull

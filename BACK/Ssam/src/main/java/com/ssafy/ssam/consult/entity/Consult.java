@@ -22,7 +22,7 @@ public class Consult {
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "actual_date")
+    @Column(name = "actual_date", columnDefinition = "TIMESTAMP")
     private Date actualDate;
 
     @NotNull
